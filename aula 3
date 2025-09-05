@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+
+int usuarioCorreto(char u[]) {
+    return strcmp(u, "admin") == 0;
+}
+
+
+int senhaCorreta(char s[]) {
+    return strcmp(s, "123456") == 0;
+}
+
+int main() {
+    char usuario[20];
+    char senha[20];
+
+    printf("Usuario: ");
+    scanf("%19s", usuario);
+
+    printf("Senha: ");
+    scanf("%19s", senha);
+
+    if (usuarioCorreto(usuario) && senhaCorreta(senha)) {
+        printf("Login correto!\n");
+    } else if (!usuarioCorreto(usuario) && senhaCorreta(senha)) {
+        printf("Usuario incorreto.\n");
+    } else if (usuarioCorreto(usuario) && !senhaCorreta(senha)) {
+        printf("Senha incorreta.\n");
+    } else {
+        printf("Usuario e senha incorretos.\n");
+    }
+
+system("Pause");
+    return 0;
+}
