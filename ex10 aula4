@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int collatz(int n) {
+    if (n == 1) {
+        return 0; 
+    } else if (n % 2 == 0) {
+    
+        return 1 + collatz(n / 2);
+    } else {
+       
+        return 1 + collatz(3 * n + 1);
+    }
+}
+
+int main() {
+    int num;
+
+    printf("Digite um numero inteiro positivo: ");
+    scanf("%d", &num);
+
+    if (num <= 0) {
+        printf("Por favor, digite um numero positivo maior que zero.\n");
+        return 1;
+    }
+
+    int passos = collatz(num);
+    printf("Numero de passos para chegar a 1: %d\n", passos);
+
+  
+	system("pause");	
+	return 0;
+}
