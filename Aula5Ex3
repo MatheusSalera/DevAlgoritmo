@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int numeros[8];
+    int maior;
+    int menor;
+	int posiMaior;
+	int posiMenor;
+
+    for (int i = 0; i < 8; i++) {
+        printf("Digite o numero: ", i + 1);
+        scanf("%d", &numeros[i]);
+        
+        
+        maior = menor = numeros[0];
+        posiMaior = posiMenor = 0;
+        
+        
+      for (int i = 1; i < 8; i++) {
+        if (numeros[i] > maior) {
+            maior = numeros[i];
+            posiMaior = i;
+        }
+        if (numeros[i] < menor) {
+            menor = numeros[i];
+            posiMenor = i;
+        }
+    }
+}
+    printf("\n Maior elemento: %d\n", maior, posiMaior);
+    printf("\n Menor elemento: %d\n", menor, posiMenor);
+
+
+	system("pause");
+	return 0;
+}
