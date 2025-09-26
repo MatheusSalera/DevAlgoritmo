@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+
+
+int eh_palindromo(char *str) {
+    char *inicio = str;
+    char *fim = str + strlen(str) - 1;
+
+    while (inicio < fim) {
+    
+        if (*inicio == ' ') {
+            inicio++;
+            continue;
+        }
+     
+        if (*fim == ' ') {
+            fim--;
+            continue;
+        }
+      
+        if (tolower((unsigned char)*inicio) != tolower((unsigned char)*fim)) {
+            return 0; 
+        }
+        inicio++;
+        fim--;
+    }
+    return 1; 
+}
+
+int main() {
+    char s1[] = "arara";
+    char s2[] = "A base do teto desaba";
+    char s3[] = "programacao";
+
+    printf("\"%s\" -> %d\n", s1, eh_palindromo(s1));
+    printf("\"%s\" -> %d\n", s2, eh_palindromo(s2));
+    printf("\"%s\" -> %d\n", s3, eh_palindromo(s3));
+
+
+
+	system("pause");
+	return 0;
+}
+
