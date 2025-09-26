@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+ 
+int conta_caracteres(char *str, char c) {
+    int count = 0;
+    char *p = str;  
+
+    while (*p != '\0') {  
+        if (*p == c) {
+            count++;
+        }
+        p++;
+    }
+
+    return count;
+}
+
+int main() {
+    char texto1[] = "programacao em c";
+    char texto2[] = "teste de contagem";
+    char texto3[] = "linguagem C";
+
+    printf("Na string \"%s\", o caractere 'a' aparece %d vezes.\n",
+           texto1, conta_caracteres(texto1, 'a'));
+
+    printf("Na string \"%s\", o caractere 'e' aparece %d vezes.\n",
+		 texto2, conta_caracteres(texto2, 'e'));
+		 
+	printf("Na string \"%s\", o caractere 'g' aparece %d vezes. \n",
+	texto3, conta_caracteres(texto3, 'g'));
+
+	system("pause");
+	return 0;
+}
+
